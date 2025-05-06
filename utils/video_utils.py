@@ -30,4 +30,5 @@ def extract_frames_from_video(video_path, output_dir, frame_rate=1):
 def extract_all_videos(video_dir, output_dir, frame_rate=1):
     for fname in os.listdir(video_dir):
         if fname.lower().endswith((".mp4", ".avi", ".mov", ".mkv")):
-            video_path_
+            video_path = os.path.join(video_dir, fname)
+            extract_frames_from_video(video_path, output_dir, frame_rate)
